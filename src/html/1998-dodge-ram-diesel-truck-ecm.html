@@ -1,0 +1,91 @@
+{#
+Nunjucks Templating!
+Homepage: https://mozilla.github.io/nunjucks/
+Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+{% include "layouts/header.html" %}
+<main class="main-content">
+    <section class="product">
+	<div class="container">
+	    <div class="row">
+		<div class="col-md-4">
+		    <div class="product-image">
+			<img src="images/product-image.gif" alt="1998 Dodge RAM Diesel Truck ECM">
+		    </div>
+		</div>
+		<div class="col-md-8">
+		    <h1 class="product-title fontsize-xxxl">1998 Dodge RAM Diesel Truck ECM</h1>
+		    <div class="price"><span class="old">$999</span> <span class="new">$895</span></div>
+		    <div class="row align-items-center">
+			<div class="col-sm-4">
+			    <img src="images/saleends-260x105.jpg" alt="Sale">
+			</div>
+			<div class="col-sm-8">
+			    <ul class="spec">
+				<li>EASY INSTALL (PLUG & PLAY)</li>
+				<li>LIFETIME WARRANTY</li>
+				<li>$600 CHEAPER THAN THE DEALER</li>
+			    </ul>
+			</div>
+		    </div>
+		    <div class="desc">
+			This computer comes pre-installed with up-to-date software (OEM) directly from Dodge. We guarantee that it’ll work with your 1998 Dodge RAM Diesel truck for life through our lifetime warranty.
+		    </div>
+		    <div class="my-4">
+			<button class="btn btn-lg btn-primary">BUY NOW <svg class="icon"><use xlink:href="images/sprite.svg#shopping-cart"></use></svg></button>
+		    </div>
+		    <div class="my-4 fontsize-m">
+			<strong>Not sure if this is the right part?</strong> Call us @ 888-875-2958!
+		    </div>
+		</div>
+	    </div>
+	</div>
+    </section>
+    <section class="text-center">
+	<div class="container">
+	    <hr>
+	    <div class="row">
+		<div class="col-md-4 mt-4">
+		    <img src="/images/free-lifetime-warranty.jpg" alt="Free Lifetime Warranty">
+		    <h3 class="fontsize-l fontweight-700 mt-4">Free Lifetime Warranty</h3>
+		    <p class="fontsize-m">Buy with confidence as all computers come with a lifetime warranty.</p>
+		</div>
+		<div class="col-md-4 mt-4">
+		    <img src="/images/100-plug-and-play.jpg" alt="100% Plug and Play">
+		    <h3 class="fontsize-l fontweight-700 mt-4">100% Plug and Play</h3>
+		    <p class="fontsize-m">Computers come ready to install. No need to visit the dealership.</p>
+		</div>
+		<div class="col-md-4 mt-4">
+		    <img src="/images/guaranteed-compatability.jpg" alt="Guaranteed Compatability">
+		    <h3 class="fontsize-l fontweight-700 mt-4">Guaranteed Compatability</h3>
+		    <p class="fontsize-m">All computers arrive pre-programmed to match your vehicle’s VIN.</p>
+		</div>
+	    </div>
+	    <hr class="my-4">
+	    <h2 class="fontsize-xxl fontweight-700">HIGHEST RATED CAR COMPUTER STORE ON GOOGLE</h2>
+	    <h3 class="fontsize-xl fontweight-600"><strong>4.9</strong> AVG RATING | <strong>2,520</strong> REVIEWS | <strong>75,394</strong> ORDERS SHIPPED</h3>
+	    <hr class="my-4">
+	    <h4 class="fontsize-xxl" style="line-height: 1.8;">Order now and this computer will be programmed, tested, and shipped directly from our facility in Cary, NC within 1-2 business days.</h4>
+	    <div class="row my-4">
+		<div class="col-md-4 mb-3">
+		    <img src="/images/programming.jpg" alt="programming.jpg">
+		</div>
+		<div class="col-md-4 mb-3">
+		    <img src="/images/testing.jpg" alt="testing.jpg">
+		</div>
+		<div class="col-md-4 mb-3">
+		    <img src="/images/post.jpg" alt="post.jpg">
+		</div>
+	    </div>
+	    <div class="my-4">
+		<button class="btn btn-lg btn-primary">PLACE ORDER <svg class="icon"><use xlink:href="images/sprite.svg#shopping-cart"></use></svg></button>
+	    </div>
+	</div>
+    </section>
+</main>
+{% include "layouts/footer.html" %}
+{% endblock %}

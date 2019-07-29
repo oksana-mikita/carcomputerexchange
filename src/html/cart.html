@@ -1,0 +1,277 @@
+{#
+Nunjucks Templating!
+Homepage: https://mozilla.github.io/nunjucks/
+Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+{% include "layouts/header.html" %}
+<main class="main-content">
+    <section class="cart py-5">
+	<div class="container">
+	    <h1>Express Secure Checkout</h1>
+	    <div class="row">
+		<div class="col-md-4">
+		    <h2>1. Billing Address</h2>
+		    <div class="form-row">
+			<div class="form-group col-md-6">
+			    <label for="firstName">*First Name:</label>
+			    <input name="firstName" type="text" class="form-control " id="firstName" value="" data-validation="required" data-validation-error-msg="First Name is a required field.">
+			</div>
+			<div class="form-group col-md-6">
+			    <label for="lastName">*Last Name:</label>
+			    <input name="lastName" type="text" class="form-control " id="lastName" value="" data-validation="required" data-validation-error-msg="Last Name is a required field.">
+			</div>
+		    </div>
+		    <div class="form-row">
+			<div class="form-group col-md-6">
+			    <label for="email">*Email</label>
+			    <input name="email" type="text" class="form-control validate " id="email" value="" data-validation="email required" data-validation-error-msg="Email Address is a required field">
+			</div>
+			<div class="form-group col-md-6">
+			    <label for="phone">*Telephone</label>
+			    <input name="phone" type="text" class="form-control " id="phone" value="" data-validation="length required" data-validation-error-msg="Phone Number is a required field." data-validation-length="10">
+			</div>
+		    </div>
+		    <div class="form-group">
+			<label for="add_1">*Address 1:</label>
+			<input name="add_1" type="text" class="form-control " id="add_1" value="" data-validation="required" data-validation-error-msg="Address is a required field.">
+		    </div>
+		    <div class="form-group">
+			<label for="add_2">Address 2:</label>
+			<input name="add_2" type="text" class="form-control" id="add_2" value="" >
+		    </div>
+		    <div class="form-group">
+			<label for="town">*City:</label>
+			<input name="town" type="text" class="form-control " id="town" value="" data-validation="required" data-validation-error-msg="City is a required field.">
+		    </div>
+		    <div class="form-row">
+			<div class="form-group col-md-6">
+			    <label for="county">*State:</label>
+			    <select name="county" id="county" class="form-control " data-validation="required" data-validation-error-msg="State is a required field.">
+				<option value="Alabama">Alabama</option>
+				<option value="Alaska">Alaska</option>
+				<option value="American Samoa">American Samoa</option>
+				<option value="Arizona">Arizona</option>
+				<option value="Arkansas">Arkansas</option>
+				<option value="Armed Forces Africa">Armed Forces Africa</option>
+				<option value="Armed Forces Americas">Armed Forces Americas</option>
+				<option value="Armed Forces Canada">Armed Forces Canada</option>
+				<option value="Armed Forces Europe">Armed Forces Europe</option>
+				<option value="Armed Forces Middle East">Armed Forces Middle East</option>
+				<option value="Armed Forces Pacific">Armed Forces Pacific</option>
+				<option value="California">California</option>
+				<option value="Colorado">Colorado</option>
+				<option value="Connecticut">Connecticut</option>
+				<option value="Delaware">Delaware</option>
+				<option value="District of Columbia">District of Columbia</option>
+				<option value="Federated States Of Micronesia">Federated States Of Micronesia</option>
+				<option value="Florida">Florida</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Guam">Guam</option>
+				<option value="Hawaii">Hawaii</option>
+				<option value="Idaho">Idaho</option>
+				<option value="Illinois">Illinois</option>
+				<option value="Indiana">Indiana</option>
+				<option value="Iowa">Iowa</option>
+				<option value="Kansas">Kansas</option>
+				<option value="Kentucky">Kentucky</option>
+				<option value="Louisiana">Louisiana</option>
+				<option value="Maine">Maine</option>
+				<option value="Marshall Islands">Marshall Islands</option>
+				<option value="Maryland">Maryland</option>
+				<option value="Massachusetts">Massachusetts</option>
+				<option value="Michigan">Michigan</option>
+				<option value="Minnesota">Minnesota</option>
+				<option value="Mississippi">Mississippi</option>
+				<option value="Missouri">Missouri</option>
+				<option value="Montana">Montana</option>
+				<option value="Nebraska">Nebraska</option>
+				<option value="Nevada">Nevada</option>
+				<option value="New Hampshire">New Hampshire</option>
+				<option value="New Jersey">New Jersey</option>
+				<option value="New Mexico">New Mexico</option>
+				<option value="New York">New York</option>
+				<option value="North Carolina">North Carolina</option>
+				<option value="North Dakota">North Dakota</option>
+				<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+				<option value="Ohio">Ohio</option>
+				<option value="Oklahoma">Oklahoma</option>
+				<option value="Oregon">Oregon</option>
+				<option value="Palau">Palau</option>
+				<option value="Pennsylvania">Pennsylvania</option>
+				<option value="Puerto Rico">Puerto Rico</option>
+				<option value="Rhode Island">Rhode Island</option>
+				<option value="South Carolina">South Carolina</option>
+				<option value="South Dakota">South Dakota</option>
+				<option value="Tennessee">Tennessee</option>
+				<option value="Texas">Texas</option>
+				<option value="Utah">Utah</option>
+				<option value="Vermont">Vermont</option>
+				<option value="Virgin Islands">Virgin Islands</option>
+				<option value="Virginia">Virginia</option>
+				<option value="Washington">Washington</option>
+				<option value="West Virginia">West Virginia</option>
+				<option value="Wisconsin">Wisconsin</option>
+				<option value="Wyoming">Wyoming</option>
+				<option value="Puerto Rico">Puerto Rico</option>
+			    </select>
+			</div>
+			<div class="form-group col-md-6">
+			    <label for="postcode">*Zip:</label>
+			    <input name="postcode" type="text" class="form-control " id="postcode" value="" data-validation="required" data-validation-error-msg="Zip is a required field.">
+			</div>
+		    </div>
+		    <div class="form-group">
+			<label for="country">*Country:</label>
+			<select name="country" id="country" class="form-control " >
+			    <option value="226">United States</option>
+			    <option value="173">Puerto Rico</option>
+			</select>
+		    </div>
+		    <div class="form-group">
+			<div class="form-check">
+			    <input class="form-check-input" type="checkbox" value="" id="createAccount">
+			    <label class="form-check-label" for="createAccount">
+				Create Account
+			    </label>
+			</div>
+		    </div>
+		    <div class="form-group">
+			<div class="form-check">
+			    <input class="form-check-input" type="checkbox" value="" id="shipToDiffAddress">
+			    <label class="form-check-label" for="shipToDiffAddress">
+				Ship to different address
+			    </label>
+			</div>
+		    </div>
+
+		    <div class="shipping-information">
+
+			<h2 class="mt-4">Shipping Information</h2>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+				<label for="delfirstName">*First Name:</label>
+				<input name="delInf[firstName]" type="text" class="form-control " id="delfirstName" value="" data-validation="required" data-validation-error-msg="Delivery First Name is a required field.">
+			    </div>
+			    <div class="form-group col-md-6">
+				<label for="dellastName">*Last Name:</label>
+				<input name="delInf[lastName]" type="text" class="form-control " id="dellastName" value="" data-validation="required" data-validation-error-msg="Delivery Last Name is a required field.">
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="deladd_1">*Address:</label>
+			    <input name="delInf[add_1]" type="text" class="form-control " id="deladd_1" value="" data-validation="required" data-validation-error-msg="Delivery Address is a required field.">
+			</div>
+			<div class="form-group">
+			    <label for="deladd_2">Address 2:</label>
+			    <input name="delInf[add_2]" type="text" class="form-control" id="deladd_2" value="" >
+			</div>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+				<label for="deltown">*City:</label>
+				<input name="delInf[town]" type="text" class="form-control " id="deltown" value="" data-validation="required" data-validation-error-msg="Delivery City is a required field.">
+			    </div>
+			    <div class="form-group col-md-6">
+				<label for="delcounty">*State:</label>
+				<select name="delInf[county]" id="delcounty" class="form-control " data-validation="required" data-validation-error-msg="Delivery State is a required field.">
+				    <option value="Alabama">Alabama</option>
+				    <option value="Alaska">Alaska</option>
+				    <option value="American Samoa">American Samoa</option>
+				    <option value="Arizona">Arizona</option>
+				    <option value="Arkansas">Arkansas</option>
+				    <option value="Armed Forces Africa">Armed Forces Africa</option>
+				    <option value="Armed Forces Americas">Armed Forces Americas</option>
+				    <option value="Armed Forces Canada">Armed Forces Canada</option>
+				    <option value="Armed Forces Europe">Armed Forces Europe</option>
+				    <option value="Armed Forces Middle East">Armed Forces Middle East</option>
+				    <option value="Armed Forces Pacific">Armed Forces Pacific</option>
+				    <option value="California">California</option>
+				    <option value="Colorado">Colorado</option>
+				    <option value="Connecticut">Connecticut</option>
+				    <option value="Delaware">Delaware</option>
+				    <option value="District of Columbia">District of Columbia</option>
+				    <option value="Federated States Of Micronesia">Federated States Of Micronesia</option>
+				    <option value="Florida">Florida</option>
+				    <option value="Georgia">Georgia</option>
+				    <option value="Guam">Guam</option>
+				    <option value="Hawaii">Hawaii</option>
+				    <option value="Idaho">Idaho</option>
+				    <option value="Illinois">Illinois</option>
+				    <option value="Indiana">Indiana</option>
+				    <option value="Iowa">Iowa</option>
+				    <option value="Kansas">Kansas</option>
+				    <option value="Kentucky">Kentucky</option>
+				    <option value="Louisiana">Louisiana</option>
+				    <option value="Maine">Maine</option>
+				    <option value="Marshall Islands">Marshall Islands</option>
+				    <option value="Maryland">Maryland</option>
+				    <option value="Massachusetts">Massachusetts</option>
+				    <option value="Michigan">Michigan</option>
+				    <option value="Minnesota">Minnesota</option>
+				    <option value="Mississippi">Mississippi</option>
+				    <option value="Missouri">Missouri</option>
+				    <option value="Montana">Montana</option>
+				    <option value="Nebraska">Nebraska</option>
+				    <option value="Nevada">Nevada</option>
+				    <option value="New Hampshire">New Hampshire</option>
+				    <option value="New Jersey">New Jersey</option>
+				    <option value="New Mexico">New Mexico</option>
+				    <option value="New York">New York</option>
+				    <option value="North Carolina">North Carolina</option>
+				    <option value="North Dakota">North Dakota</option>
+				    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+				    <option value="Ohio">Ohio</option>
+				    <option value="Oklahoma">Oklahoma</option>
+				    <option value="Oregon">Oregon</option>
+				    <option value="Palau">Palau</option>
+				    <option value="Pennsylvania">Pennsylvania</option>
+				    <option value="Puerto Rico">Puerto Rico</option>
+				    <option value="Rhode Island">Rhode Island</option>
+				    <option value="South Carolina">South Carolina</option>
+				    <option value="South Dakota">South Dakota</option>
+				    <option value="Tennessee">Tennessee</option>
+				    <option value="Texas">Texas</option>
+				    <option value="Utah">Utah</option>
+				    <option value="Vermont">Vermont</option>
+				    <option value="Virgin Islands">Virgin Islands</option>
+				    <option value="Virginia">Virginia</option>
+				    <option value="Washington">Washington</option>
+				    <option value="West Virginia">West Virginia</option>
+				    <option value="Wisconsin">Wisconsin</option>
+				    <option value="Wyoming">Wyoming</option>
+				    <option value="Puerto Rico">Puerto Rico</option>
+				</select>
+			    </div>
+			</div>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+				<label for="delpostcode">*ZIP Code:</label>
+				<input name="delInf[postcode]" type="text" class="form-control " id="delpostcode" value="" data-validation="required" data-validation-error-msg="Delivery Zip Code is a required field.">
+			    </div>
+			    <div class="form-group col-md-6">
+				<label for="delcountry">*Country:</label>
+				<select name="delInf[country]" id="delcountry" class="form-control" >
+				    <option value="226">United States</option>
+				    <option value="173">Puerto Rico</option>
+				</select>
+			    </div>
+			</div>
+		    </div>
+		</div>
+		<div class="col-md-4">
+		    <h2>2. Shipping Options</h2>
+		    <h2>3. Payment Options</h2>
+		</div>
+		<div class="col-md-4">
+		    <h2>4. Order Summary</h2>
+		</div>
+	    </div>
+	</div>
+    </section>
+
+</main>
+{% include "layouts/footer.html" %}
+{% endblock %}
