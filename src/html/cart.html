@@ -11,10 +11,10 @@ Docs: https://mozilla.github.io/nunjucks/api.html
 <main class="main-content">
     <section class="cart py-5">
 	<div class="container">
-	    <h1>Express Secure Checkout</h1>
+	    <h1 class="mb-4">Express Secure Checkout</h1>
 	    <div class="row">
-		<div class="col-md-4">
-		    <h2>1. Billing Address</h2>
+		<div class="col-xl-4 col-md-6">
+		    <h2 class="my-3">1. Billing Address</h2>
 		    <div class="form-row">
 			<div class="form-group col-md-6">
 			    <label for="firstName">*First Name:</label>
@@ -139,6 +139,16 @@ Docs: https://mozilla.github.io/nunjucks/api.html
 			    </label>
 			</div>
 		    </div>
+		    <div class="create-account mb-4 d-none">
+			<div class="form-group">
+			    <label for="pass_confirmation">*Choose Password:</label>
+			    <input name="pass_confirmation" type="password" class="form-control " id="pass_confirmation" value="" tabindex="13" data-validation="required" data-validation-error-msg="Password is a required field.">
+			</div>
+			<div class="form-group">
+			    <label for="pass">*Confirm Password:</label>
+			</div>
+			<input name="pass" type="password" class="form-control " id="pass" value="" tabindex="14" data-validation="confirmation" data-validation-error-msg="Passwords must match.">
+		    </div>
 		    <div class="form-group">
 			<div class="form-check">
 			    <input class="form-check-input" type="checkbox" value="" id="shipToDiffAddress">
@@ -148,8 +158,7 @@ Docs: https://mozilla.github.io/nunjucks/api.html
 			</div>
 		    </div>
 
-		    <div class="shipping-information">
-
+		    <div class="shipping-information  d-none">
 			<h2 class="mt-4">Shipping Information</h2>
 			<div class="form-row">
 			    <div class="form-group col-md-6">
@@ -261,12 +270,144 @@ Docs: https://mozilla.github.io/nunjucks/api.html
 			</div>
 		    </div>
 		</div>
-		<div class="col-md-4">
-		    <h2>2. Shipping Options</h2>
-		    <h2>3. Payment Options</h2>
+		<div class="col-xl-4 col-md-6">
+		    <h2 class="my-3">2. Shipping Options</h2>
+		    <div class="form-group">
+			<div class="form-check">
+			    <input class="form-check-input" type="radio" name="shipping" id="shipping" value="1" checked>
+			    <label class="form-check-label" for="shipping">
+				Priority Shipping (2-3 business days) Regular Shipping ($19.95)
+			    </label>
+			</div>
+			<small class="form-text text-muted">*Includes a pre-paid return label for returning you old car computer and activating your warranty.</small>
+		    </div>
+		    <h2 class="mt-3">3. Payment Options</h2>
+
+		    <div class="form-check">
+			<input class="form-check-input" type="radio" name="gateway" id="gateway-cc" value="Authorize_AIM" checked>
+			<label class="form-check-label" for="gateway-cc">
+			    Credit Card
+			</label>
+		    </div>
+		    <img src="/images/credit-card.jpg" class="payment_logo">
+		    <div class="form-group">
+			<label for="cardNumber">Card Number:</label>
+			<input type="text" name="cardNumber" id="cardNumber" value="" size="19" maxlength="19" class="form-control " style="width: 203px;" data-validation="number length required" data-validation-error-msg="Credit Card Number is a required field." data-validation-length="15-17">
+		    </div>
+		    <div class="form-row">
+			<div class="form-group col-md-6">
+			    <label for="expirationMonth">Expiration Month:</label>
+			    <select name="expirationMonth" id="expirationMonth" class="form-control " data-validation="number length required" data-validation-error-msg="Expiration Month is a required field." data-validation-length="2">
+				<option value="">Month</option>
+				<option value="01">01- January</option>
+				<option value="02">02- February</option>
+				<option value="03">03- March</option>
+				<option value="04">04- April</option>
+				<option value="05">05- May</option>
+				<option value="06">06- June</option>
+				<option value="07">07- July</option>
+				<option value="08">08- August</option>
+				<option value="09">09- September</option>
+				<option value="10">10- October</option>
+				<option value="11">11- November</option>
+				<option value="12">12- December</option>
+			    </select>
+			</div>
+			<div class="form-group col-md-6">
+			    <label for="expirationYear">Expiration Year:</label>
+			    <select name="expirationYear" id="expirationYear" class="form-control " data-validation="number required" data-validation-error-msg="Expiration Year is a required field.">
+				<option value="">Year</option>
+				<option value="19">2019</option>
+				<option value="20">2020</option>
+				<option value="21">2021</option>
+				<option value="22">2022</option>
+				<option value="23">2023</option>
+				<option value="24">2024</option>
+				<option value="25">2025</option>
+				<option value="26">2026</option>
+				<option value="27">2027</option>
+				<option value="28">2028</option>
+				<option value="29">2029</option>
+			    </select>
+			</div>
+		    </div>
+		    <div class="form-check">
+			<input class="form-check-input" type="radio" name="gateway" id="gateway-paypal" value="PayPal">
+			<label class="form-check-label" for="gateway-paypal">
+			    PayPal
+			</label>
+		    </div>
+		    <img src="/images/paypal-logo.jpg" class="paypal_logo">
 		</div>
-		<div class="col-md-4">
-		    <h2>4. Order Summary</h2>
+		<div class="col-xl-4 col-md-12">
+		    <h2 class="my-3">4. Order Summary</h2>
+		    <div class="form-row">
+			<div class="col-3">
+			    <img src="/images/thumb_26.jpg" alt="1995 Dodge Avenger ECM PCM Engine Control Module" class="shipImage" title="1995 Dodge Avenger ECM PCM Engine Control Module">
+			</div>
+			<div class="col-9">
+			    <span>1995 Dodge Avenger ECM PCM Engine Control Module</span>
+			</div>
+		    </div>
+		    <table class="table table-sm table-striped">
+			<tr>
+			    <td>Regular Price</td>
+			    <td><span class="linethrough">$369.00</span></td>
+			</tr>
+			<tr class="text-danger">
+			    <td><span>Sale Price</span></td>
+			    <td><span>$295.00</span></td>
+			</tr>
+			<tr>
+			    <td>Quantity</td>
+			    <td> <input name="updateCartQuanValue" type="number" value="1" size="2" class="form-control"></td>
+			</tr>
+			<tr class="text-danger">
+			    <td>Discount</td>
+			    <td>- $74.00</td>
+			</tr>
+			<tr class="text-danger">
+			    <td>Valid For</td>
+			    <td>
+				<span id="countdownToMidnight"><b>8 hrs 18 mins 3 secs </b></span>
+			    </td>
+			</tr>
+			<tr>
+			    <td>Sub Total</td>
+			    <td>$295.00</td>
+			</tr>
+			<tr>
+			    <td>Shipping</td>
+			    <td>$19.95</td>
+			</tr>
+			<tr>
+			    <td>Tax</td>
+			    <td>n/a</td>
+			</tr>
+			<tr class="bg-success" style="color: #fff">
+			    <td>Order Total</td>
+			    <td>$314.95</td>
+			</tr>
+		    </table>
+		    <script type="text/javascript">
+
+			setInterval('ShowTimes()', 1000);
+
+			function ShowTimes() {
+			    var now = new Date();
+			    var hrs = 23 - now.getHours();
+			    var mins = 59 - now.getMinutes();
+			    var secs = 59 - now.getSeconds();
+			    var str = '';
+			    str = '<b>' + hrs + ' hrs ' + mins + ' mins ' + secs + ' secs </b>';
+			    document.getElementById('countdownToMidnight').innerHTML = str;
+			}
+
+
+		    </script>
+
+		    <a href="javascript: checkCart();" class="btn btn-lg btn-block btn-success" title="Place My Order">Place Order</a>
+
 		</div>
 	    </div>
 	</div>
