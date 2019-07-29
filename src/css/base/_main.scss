@@ -200,7 +200,30 @@ label{
     font-size: .8rem;
 }
 .cart{
-
+    .row{
+	@include media-breakpoint-up(xl) {
+	    .col-xl-4 + .col-xl-4:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background-color: #666;
+	    }
+	}
+	@include media-breakpoint-between(md,lg) {
+	    > .col-md-6 + .col-md-6:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background-color: #666;
+	    }
+	}
+    }
 }
 .site-footer{
     .footer{
