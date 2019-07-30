@@ -196,10 +196,10 @@ svg.icon{
 	margin-left: .3rem;
     }
 }
-label{
-    font-size: .8rem;
-}
 .cart{
+    .btn-lg{
+	font-size: 2rem;
+    }
     .row{
 	@include media-breakpoint-up(xl) {
 	    .col-xl-4 + .col-xl-4:before{
