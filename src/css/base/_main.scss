@@ -58,7 +58,12 @@ html{
 .fontweight-600{
     font-weight: 600;
 }
-
+label{
+    font-size: 1.15rem;
+}
+hr{
+    border-color: #666;
+}
 .btn-secondary{
     color: #fff;
 }
@@ -198,7 +203,10 @@ svg.icon{
 }
 .cart{
     .btn-lg{
-	font-size: 2rem;
+	font-size: 36px;
+    }
+    h2{
+	font-weight: 600;
     }
     .row{
 	@include media-breakpoint-up(xl) {
