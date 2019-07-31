@@ -61,9 +61,7 @@ html{
 label{
     font-size: 1.15rem;
 }
-hr{
-    border-color: #666;
-}
+
 .btn-secondary{
     color: #fff;
 }
@@ -202,6 +200,9 @@ svg.icon{
     }
 }
 .cart{
+    hr{
+	border-color: #666;
+    }
     .btn-lg{
 	font-size: 36px;
     }
