@@ -199,9 +199,14 @@ svg.icon{
 	margin-left: .3rem;
     }
 }
+@include media-breakpoint-up(md) {
+    .sm-show{
+	display: none;
+    }
+}
 .cart{
     hr{
-	border-color: #666;
+	border-color: #999;
     }
     .btn-lg{
 	font-size: 36px;
@@ -210,6 +215,14 @@ svg.icon{
 	font-weight: 600;
     }
     .row{
+	@include media-breakpoint-up(md) {
+	    margin-right: -30px;
+	    margin-left: -30px;
+	    .col-xl-4{
+		padding-right: 30px;
+		padding-left: 30px;
+	    }
+	}
 	@include media-breakpoint-up(xl) {
 	    .col-xl-4 + .col-xl-4:before{
 		content: "";
@@ -218,7 +231,7 @@ svg.icon{
 		left: 0;
 		width: 1px;
 		height: 100%;
-		background-color: #666;
+		background-color: #999;
 	    }
 	}
 	@include media-breakpoint-between(md,lg) {
@@ -229,9 +242,19 @@ svg.icon{
 		left: 0;
 		width: 1px;
 		height: 100%;
-		background-color: #666;
+		background-color: #999;
 	    }
 	}
+    }
+    @include media-breakpoint-down(sm) {
+	.product-title{
+	    font-size: 1.4rem;
+	}
+    }
+    .order-total{
+	font-weight: 600;
+	font-size: 1.3rem;
+	background-color: rgba(0, 0, 0, 0.1) !important;
     }
 }
 .site-footer{
